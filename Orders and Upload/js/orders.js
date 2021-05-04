@@ -3,6 +3,7 @@ var template = Handlebars.compile(quoteInfo);
 var data = template({name: "Tomato", delivery: "12/10/2020", return: "22/10/2020", image: "images/1.jpg", address: "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"});
 document.getElementById('data').innerHTML += data;
 
+//validation
 function check()
 {
 
