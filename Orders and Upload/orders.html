@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order description</title>
+        <script src="js/handlebars-v4.7.7.js"></script>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/orders.css">
+    </head>
+    
+    <body>
+    
+        <nav class="navbar navbar-light" style="background-color: #288844;">
+            <!-- Navbar content -->
+            
+            <span class="navbar-brand mb-0 h1" style="color: white;"><b>Agrosight</b></span>
+            <div class="container">
+            <div class="search_wrap search_wrap_3">
+                <div class="search_box">
+                    <input type="text" class="input" placeholder="search...">
+                    <div class="btn btn_common">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        
+    
+            <div class="container">
+                <div class="cart">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                </div>
+            </div>
+            <div class="right">
+                <div class="dropdown">
+                    <a href="#">
+                        <div class="user">
+                            <i class="fas fa-user fa-lg"></i><i class="fas fa-angle-down"></i>
+                        </div>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="#"><i class="fas fa-user"></i>Profile</a>
+                        <a href="#"><i class="fas fa-newspaper"></i> Orders</a>
+                        <a href="#"><i class="fas fa-cloud-upload-alt"></i>Upload</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        
+
+        <div id="data"></div><br>
+        
+        
+
+        <script id="quote-template" type="text/x-handlebars-template">
+            <div class="title">
+                <div class="desc">  
+                    <p>
+                        <span class='head'>
+                            <a href='https://www.w3schools.com/html/html_images.asp'>{{name}}</a>
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class='del'>
+                            Delivered on <b>{{delivery}}</b><br>Return policy valid till <b>{{return}}</b> 
+                        </span>
+                    </p>
+                    
+                </div> 
+                <div class="img">
+                    <a href="https://www.w3schools.com/html/html_images.asp">
+                        <img src="{{image}}" >
+                    </a>
+                </div>
+                <hr>    
+            </div>
+
+
+           <div id="item1">
+            <div class="title">
+                <div class="desc">  
+                    <p>
+                        <span class='head'>
+                            <a href='https://www.w3schools.com/html/html_images.asp'>{{name}}</a>
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class='del'>
+                            Delivered on <b>{{delivery}}</b><br>Return policy valid till <b>{{return}}</b> 
+                        </span>
+                    </p>
+                    
+                </div> 
+                <div class="img">
+                    <a href="https://www.w3schools.com/html/html_images.asp">
+                        <img src="{{image}}" >
+                    </a>
+                </div>
+                <hr>    
+            </div>
+
+            
+        
+           </div>
+
+           
+           <div id="item2">
+            <div class="title">
+                <div class="desc">  
+                    <p>
+                        <span class='head'>
+                            <a href='https://www.w3schools.com/html/html_images.asp'>{{name}}</a>
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class='del'>
+                            Delivered on <b>{{delivery}}</b><br>Return policy valid till <b>{{return}}</b> 
+                        </span>
+                    </p>
+                    
+                </div> 
+                <div class="img">
+                    <a href="https://www.w3schools.com/html/html_images.asp">
+                        <img src="{{image}}" >
+                    </a>
+                </div>
+                <hr>    
+            </div>
+
+            
+        
+           </div>
+
+
+
+
+           
+            
+
+           
+        </script>
+
+
+
+        
+        <script src="js/orders.js"></script>
+
+    </body>
+</html>
