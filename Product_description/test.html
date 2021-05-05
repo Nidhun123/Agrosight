@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <script src="handlebars-v4.7.7.js"></script>
+  <script src="test.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel="stylesheet" href="test.css">
+</head>
+ 
+<body>
+   
+    <nav class="navbar navbar-light" style="background-color: #288844;">
+        <!-- Navbar content -->
+        
+        <span class="navbar-brand mb-0 h1" style="color: white;"><b>Agrosight</b></span>
+        <div class="container">
+        <div class="search_wrap search_wrap_3">
+			<div class="search_box">
+				<input type="text" class="input" placeholder="search...">
+				<div class="btn btn_common">
+					<i class="fas fa-search"></i>
+				</div>
+			</div>
+		</div>
+     
+  
+        <div class="container">
+            <div class="cart">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+            </div>
+        </div>
+        <div class="right">
+            <div class="dropdown">
+                <a href="#">
+                    <div class="user">
+                        <i class="fas fa-user fa-lg"></i><i class="fas fa-angle-down"></i>
+                    </div>
+                </a>
+
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-user"></i>Profile</a>
+                    <a href="#"><i class="fas fa-newspaper"></i> Orders</a>
+                    <a href="#"><i class="fas fa-cloud-upload-alt"></i>Upload</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+   
+
+    <div id="product"></div><br>
+
+    <script id="product_template" type="text/x-handlebars-template">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                        <img src={{Images}} alt="img">
+                </div>
+                <div class="col-md-7">
+                    <h1>{{Product_name}}</h1>
+                    
+                    <span class = "fa fa-star checked"></span>  
+                    <span class = "fa fa-star checked"></span>  
+                    <span class = "fa fa-star checked"></span>  
+                    <span class = "fa fa-star checked"></span>  
+                    <span class = "fa fa-star unchecked"></span>  
+                    <pre class="tab"><span id="Off">{{Off_percentage}}% Off</span> <del><b>{{Original_price}}</b></del> <b>{{New_price}}</b></pre>
+                    <br>
+                    <h3>Product details</h3>
+                    <br>
+                    <p><span id="do">Packed date  -  <b>{{Packed_date}}</b></span></p>
+                    <p><span id="do">Expiry date  -  <b>{{Expiry_date}}</b></span></p>
+                    <p><span id="do">Quantity included  -  <b>{{Quantity_included}}</b></span></p>
+                    <!-- 
+                    <span>
+                        Packed date- <b>{{Packed_date}}</b><br>
+                        Expiry date- <b>{{Expiry_date}}</b><br>
+                        Quantity included- <b>{{Quantity_included}}</b>
+                    </span>
+                    -->
+                </div>
+    
+            </div>
+    
+        </div>
+    
+       
+    
+        <div class="container">
+            <div class="text-left">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Add to cart</a>
+                <a class="btn btn-success btn-lg" href="#" role="button">Buy now</a>          
+            </div>    
+        </div>
+    
+    </script>
+
+    <script type="text/javascript">
+
+        var productInfo = document.getElementById("product_template").innerHTML;
+        
+        var producttemp = Handlebars.compile(productInfo);
+        var product = producttemp({Packed_date : "March 21, 2021", Expiry_date: "August 10, 2021", Quantity_included: "2", Images: "./milt.jpg", 
+        Product_name: "Milt sansevieria", Original_price: "24/kg", New_price: "20/kg", Off_percentage: "50"});
+
+        document.getElementById('product').innerHTML += product;
+    </script>
+</body>
+</html>
