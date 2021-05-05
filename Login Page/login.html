@@ -7,16 +7,19 @@
     <div class="loginbox">
     <img src="avatar.jpg" class="avatar">
         <h1>Login Here</h1>
-        <form>
-            <p>Username</p>
-            <input type="text" name="" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
+        <form class="loginform" action="" method="post" name="form" onsubmit="return validated()">
+            <div class="font">Username</div>
+            <input type="text" name="username" placeholder="Enter Username">
+            <div id="username_error">Please fill up your email</div>
+            <div class="font2">Password</div>
+            <input type="password" name="password" placeholder="Enter Password">
+            <div id="pass_error">Please fill up your password</div>
+            <!-- <button type="submit">Login</button> -->
             <input type="submit" name="" value="Login">
             <a href="#">Lost your password?</a><br>
             <a href="#">Don't have an account?</a>
         </form>
-
+        <script src="valid.js"></script>
     </div>
 
 </body>
