@@ -1,0 +1,51 @@
+
+    <div id="product"></div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                        <img src="./images/1.jpeg" style= "display: block;height: 400px;width: 400px;object-fit: cover;margin-bottom: 30px;border-radius: 20px;">
+                </div>
+                <div class="col-md-7">
+                    <h1 style="font-size: 40px; color:rgb(54, 54, 54) ">{{idea.name}}</h1>
+                    
+                    
+                    <p class="tab">
+                        <b style="font-size: 30px; ">Rs {{idea.price}}</b>
+                        <del style="color: #979797; font-size: 23px; ">100 </del>
+                        <span style="  color: rgb(21, 116, 60); padding: 10px; font-size: 30px; ">{{idea.discount}}% Off </span>
+                         
+                    </p>
+                    <!-- <pre class="tab"><span id="Off"><b>{{Off_percentage}}% Off</b></span> <del><b>{{Original_price}}</b></del> <b>{{New_price}}</b></pre> -->
+                    <br><br>
+                    <h3>Product details</h3>
+                    <br>
+                    <p><span id="do">Packed date  -  <b>{{idea.pkd_date}}</b></span></p>
+                    <p><span id="do">Expiry date  -  <b>{{idea.exp_date}}</b></span></p>
+                    <p><span id="do">Quantity included  -  <b>{{idea.quantity}}</b></span></p>
+                    <!-- 
+                    <span>
+                        Packed date- <b>{{Packed_date}}</b><br>
+                        Expiry date- <b>{{Expiry_date}}</b><br>
+                        Quantity included- <b>{{Quantity_included}}</b>
+                    </span>
+                    -->
+                </div>
+    
+            </div>
+    
+        </div>
+    
+       
+    
+        <div class="container">
+            <div class="text-left">
+                <a class="btn btn-primary btn-lg" style="color: white;" href="#" role="button">Add to cart</a>
+                <a class="btn btn-success btn-lg" href="#" role="button">Buy now</a>          
+            </div>    
+        </div>
+    
+
+</body>
+
+</html>
