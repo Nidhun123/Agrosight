@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-success mb-3">
+    <div class="container">
+
+        <a class="navbar-brand" href="/">Agrosight</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " href="/">Home</a>
+                </li>
+            </ul>
+            <div class="container">
+                <div class="search_wrap search_wrap_3">
+                    <div class="search_box">
+                        <form id="form" action="/ideas/search" method="get">
+
+                            <input type="text" class="input" name="search"  id="mySearch" placeholder="search...">
+                            <button class="btn btn_common" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="cart">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                </div>
+            </div>
+            <style>
+                .container .input {
+                    border: 0;
+                    outline: none;
+                    color: #8b7d77;
+                }
+
+                .search_wrap {
+                    position: absolute;
+                    width: 580px;
+                    margin: 1px auto;
+
+                    left: 35%;
+
+                }
+
+                .search_wrap .search_box {
+                    position: relative;
+                    width: 450px;
+                    height: 40px;
+                }
+
+                .search_wrap .search_box .input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px 20px;
+                    border-radius: 3px;
+                    font-size: 15px;
+                }
+
+                .search_wrap .search_box .btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 40px;
+                    height: 100%;
+                    background: #7690da;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+
+                .search_wrap .search_box .btn:hover {
+                    background: #708bd2;
+                }
+
+                .search_wrap .search_box .btn.btn_common .fas {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #fff;
+                    font-size: 15px;
+                }
+
+                .search_wrap.search_wrap_3 .search_box .input {
+                    padding-right: 80px;
+                }
+
+
+                .search_wrap.search_wrap_3 .search_box .input {
+                    border-radius: 50px;
+                }
+
+                .search_wrap.search_wrap_3 .search_box .btn {
+                    right: 0px;
+                    border-radius: 50%;
+
+
+                }
+
+                .cart {
+                    position: absolute;
+                    right: 250px;
+                    bottom: 0px;
+                    top: 18px;
+                    color: #fff;
+                    margin: auto;
+                }
+            </style>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <i class="fas fa-user fa-lg" style="color: white;"></i><i class="fas"></i>
+
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/ideas/uploads">Uploads</a></li>
+                        <li><a class="dropdown-item" href="/ideas/add">Add Product</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+{{!-- <script>
+    function myFunction() {
+        var x = document.getElementById("mySearch").value;
+        document.getElementById("form").action.value="/ideas/search/";
+        console.log(x);
+    }
+</script> --}}
