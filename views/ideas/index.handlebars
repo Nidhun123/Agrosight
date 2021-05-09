@@ -1,22 +1,54 @@
 {{#each ideas}}
 
-    <div class="card card-body mb-2" >
-        <h4>{{category}}</h4>
-        <p><span style="font-size: large;"><b>Name :</b> {{name}}</span></p>
-        <p><span style="font-size: large;"><b>Price :</b> {{price}}</p>
-        <p><span style="font-size: large;"><b>Expiry Date :</b> {{exp_date}}</p>
-        <p><span style="font-size: large;"><b>Packed Date :</b> {{pkd_date}}</p>
-        <p><span style="font-size: large;"><b>Quantity :</b> {{quantity}}</p>
-        <p><span style="font-size: large;"><b>Discount :</b> {{discount}}%</p>
-        <p><span style="font-size: large;"><b>Image :</b> {{image}}</p>
-        <a href="/ideas/uploads/photo/{{_id}}"><img src="{{idea.image}}" ></a>
-        <a class="btn btn-success btn-block mb-2" href="/ideas/edit/{{_id}}">Edit</a>
-        <a class="btn btn-primary btn-block mb-2" href="/ideas/product/{{_id}}">View</a>
-        <form method="post" action="/ideas/uploads/{{_id}}?_method=delete">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" class="btn btn-danger btn-block" value="delete">
-        </form>
+
+
+
+
+
+
+
+
+<div class="card card-body mb-2" style="  border-radius: 25px;
+  ">
+    {{!-- <h4>{{category}}</h4> --}}
+
+    <div class="d-flex flex-row ">
+        <a href="/ideas/product/{{_id}}">
+            <div class="p-2 ">
+                <img src="/uploads/{{image}}"
+                    style="display: block;height: 150px;width: 150px;object-fit: cover;border-radius: 20px; ">
+            </div>
+        </a><br><br><br>
+        <div class="d-flex flex-column p-2 m-2">
+            <a style="text-decoration: none;" href="/ideas/product/{{_id}}">
+                <div>
+                    <p><span style="font-size:x-large; color:rgb(14, 90, 39)"><b>{{name}}</b> </span></p>
+                </div>
+            </a>
+            <div>
+                <p><span style="font-size: large;"><b>Price :</b>      <i class="fas fa-rupee-sign"></i>  {{price}}</p>
+            </div>
+            <div>
+                <p><span style="font-size: large;"><b>Expiry Date :</b> {{exp_date}}</p>
+            </div>
+        </div>
+
+        <div class="p-2 m-2">
+            <a class="btn btn-primary btn-block mb-2" href="/ideas/edit/{{_id}}">Edit</a>
+        </div>
+
+        <div class="p-2 m-2">
+            <form method="post" action="/ideas/uploads/{{_id}}?_method=delete">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" class="btn btn-danger btn-block" value="delete">
+            </form>
+        </div>
+
     </div>
+
+
+
+</div>
 {{else}}
-    <h1 style="margin-top: 20%; margin-left: 20%; color:rgb(15, 83, 32)">It's time to upload some products...!!</h1>
+<h1 style="margin-top: 20%; margin-left: 20%; color:rgb(15, 83, 32)">It's time to upload some products...!!</h1>
 {{/each}}
