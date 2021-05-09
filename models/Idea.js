@@ -26,7 +26,7 @@ const IdeaSchema = new Schema({
         default: Date.now
     },
     quantity:{
-        type: String,
+        type: Number,
         required: true
     },
     discount:{
