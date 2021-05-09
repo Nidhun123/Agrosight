@@ -1,50 +1,66 @@
+<div id="product"></div><br>
 
-    <div id="product"></div><br>
+<div class="container">
+    <div class="d-flex flex-row ">
+        <div class="pr-5 m-2">
+            <img src="/uploads/{{idea.image}}"
+                style="display: block;height: 400px;width: 400px;object-fit: cover;margin-bottom: 16px;border-radius: 20px;">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                        <img src="/uploads/{{idea.image}}" style= "display: block;height: 400px;width: 400px;object-fit: cover;margin-bottom: 30px;border-radius: 20px;">
+            <div class="container">
+                <div class="text-left">
+                    <a class="btn btn-primary btn-lg" style="color: white;" href="#" role="button">Add to cart</a>
+                    <a class="btn btn-success btn-lg" href="#" role="button">Buy now</a>
                 </div>
-                <div class="col-md-7">
-                    <h1 style="font-size: 40px; color:rgb(54, 54, 54) ">{{idea.name}}</h1>
-                    
-                    
-                    <p class="tab">
-                        <b style="font-size: 30px; ">Rs {{idea.price}}</b>
-                        <del style="color: #979797; font-size: 23px; ">100 </del>
-                        <span style="  color: rgb(21, 116, 60); padding: 10px; font-size: 30px; ">{{idea.discount}}% Off </span>
-                         
-                    </p>
-                    <!-- <pre class="tab"><span id="Off"><b>{{Off_percentage}}% Off</b></span> <del><b>{{Original_price}}</b></del> <b>{{New_price}}</b></pre> -->
-                    <br><br>
-                    <h3>Product details</h3>
-                    <br>
-                    <p><span id="do">Packed date  -  <b>{{idea.pkd_date}}</b></span></p>
-                    <p><span id="do">Expiry date  -  <b>{{idea.exp_date}}</b></span></p>
-                    <p><span id="do">Quantity included  -  <b>{{idea.quantity}}</b></span></p>
-                    <!-- 
+            </div>
+
+        </div>
+        <div class="pr-5 m-2">
+            <h1 style="font-size: 40px; color:rgb(14, 90, 39) "><b>{{idea.name}}</b></h1>
+
+
+            <p class="tab">
+                <b style="font-size: 30px; "><i class="fas fa-rupee-sign"></i> {{idea.price}}</b>
+                <del style="color: #979797; font-size: 20px; ">100 </del>
+                <span style="  color: rgb(21, 116, 60); padding: 10px; font-size: 30px; ">{{idea.discount}}% Off </span>
+
+            </p>
+            <!-- <pre class="tab"><span id="Off"><b>{{Off_percentage}}% Off</b></span> <del><b>{{Original_price}}</b></del> <b>{{New_price}}</b></pre> -->
+            <br><br>
+            <p style="color: rgb(5, 64, 192); font-size: 27px;"><b>Product details</b></p>
+
+            <p><span style="font-size: 22px;" id="do">Packed date - <b>{{idea.pkd_date}}</b></span></p>
+            <p><span style="font-size: 22px;" id="do">Expiry date - <b>{{idea.exp_date}}</b></span></p>
+            <p><span style="font-size: 22px;" id="do">Quantity included - <b>{{idea.quantity}} Kg</b></span></p><br><br>
+            <div class="d-flex flex-row ">
+                <div class=" pr-3">
+                    <a class="btn btn-primary btn-lg mb-2" href="/ideas/edit/{{_id}}">Edit</a>
+                </div>
+
+                <div class=" pr-2">
+                    <form method="post" action="/ideas/uploads/{{_id}}?_method=delete">
+                        <input type="hidden" name="_method" value="Delete">
+                        <input type="submit" class="btn btn-danger btn-lg" value="Delete">
+                    </form>
+                </div>
+            </div>
+
+            <!-- 
                     <span>
                         Packed date- <b>{{Packed_date}}</b><br>
                         Expiry date- <b>{{Expiry_date}}</b><br>
                         Quantity included- <b>{{Quantity_included}}</b>
                     </span>
                     -->
-                </div>
-    
-            </div>
-    
         </div>
-    
-       
-    
-        <div class="container">
-            <div class="text-left">
-                <a class="btn btn-primary btn-lg" style="color: white;" href="#" role="button">Add to cart</a>
-                <a class="btn btn-success btn-lg" href="#" role="button">Buy now</a>          
-            </div>    
-        </div>
-    
+
+
+
+    </div>
+
+</div>
+
+
+
 
 </body>
 
