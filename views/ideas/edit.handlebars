@@ -7,15 +7,23 @@
 
 
 
-<div class="card card-body">
-    <h3>Edit Video Idea</h3>
+<div class="card card-body col-sm-4 mx-auto">
+    <h3>Edit your product details</h3>
     <form action="/ideas/uploads/{{idea._id}}?_method=put" method="post">
             <input type="hidden" name="_method" value="put">
 
-        {{!-- <div class="form-group">
-            <label for="Title">category</label>
-            <input type="text" class="form-control" name="title" value="{{idea.title}}" required>
-        </div> --}}
+        <div class="form-group">
+            <label for="Category">Category</label>
+            <select class="form-control" name="category">
+                <option>Fruits</option>
+                <option>Vegetables</option>
+                <option>Flowers</option>
+                <option>Cereals</option>
+                <option>Medicinal</option>
+                <option>Leafy</option>
+                
+            </select>
+        </div>
 
             <div class="form-group">
                 <label for="name">Name</label>
