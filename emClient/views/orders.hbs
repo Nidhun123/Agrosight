@@ -1,0 +1,39 @@
+{{#each orders}}
+
+
+<div class="card  mx-auto mt-4 p-3" style="width:75%; border-radius: 25px;
+  ">
+    {{!-- <h4>{{category}}</h4> --}}
+
+    <div class="d-flex flex-row ">
+        <div class="d-flex flex-column p-2 m-2">
+            <a style="text-decoration: none;" href="/state/{{name}}">
+                <div>
+                    <p><span style="font-size:x-large; color:rgb(14, 90, 39)"><b>{{name}}</b> </span></p>
+                </div>
+            </a>
+            <p>
+                <b style="font-size:x-large; " ><i class="fas fa-rupee-sign"></i> {{newprice}}</b>
+                <del style="color: #979797; font-size: large; ">{{price}} </del>
+                <span style="  color: rgb(21, 116, 60); padding: 10px; font-size: x-large; ">{{discount}}% Off </span>
+
+            </p>
+            <div>
+                <p><span style="font-size: large;"><b>Delivery Date :     </b>{{date}}</span></p>
+            </div>
+            <div>
+                <p><span style="font-size: large;"><b>Address :     </b>{{address}}</span></p>
+            </div>
+        </div>
+ 
+
+
+
+    </div>
+
+
+
+</div>
+{{else}}
+<h1 style="margin-top: 20%; text-align:center; color:rgb(15, 83, 32)">No items left in the cart :(</h1>
+{{/each}}

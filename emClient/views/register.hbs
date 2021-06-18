@@ -1,0 +1,132 @@
+<style>
+    body {
+        background-image: url(/images/Register.jpg);
+        background-size: cover;
+        background-position: top;
+    }
+
+    #ui {
+        background-color: #ffffff60;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 25px;
+    }
+
+    h1 {
+        color: black;
+        font-family: cursive;
+    }
+
+    #ui input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 80%;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 40px;
+        margin-bottom: 10px;
+        border-radius: 25px;
+    }
+
+    .form-control {
+        background: transparent;
+        border-radius: 0px;
+        border: 0px;
+        border-bottom: 1px solid black;
+    }
+
+    #ui a {
+        margin-left: 90px;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+    }
+        #agro {
+        position: absolute;
+        right: 37%;
+        top: 7%;
+    }
+
+    #signup {
+        position: absolute;
+        right: 34%;
+   
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7"> </div>
+        <div class="col-lg-5">
+
+            <div id="ui">
+                <br>
+
+                <form action="/register" method="post" class="form-group">
+                    <div id="agro" class="text-center mb-3">
+                        <a style="font-weight:bold; font-size:xx-large; font-family:Merienda;"><span
+                                style="color: black; ">A</span><span
+                                style="color: rgba(31, 112, 53, 1); ">grosight</span></a>
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class="col-lg-6 font-weight-bold">
+                            <label for="fname">First Name</label>
+                            <input type="text" name="fname" value="{{fname}}" class="form-control"
+                                placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="col-lg-6 font-weight-bold">
+                            <label for="lname">Last Name</label>
+                            <input type="text" name="lname" value="{{lname}}" class="form-control"
+                                placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    <br>
+
+                    <label for="email" class="font-weight-bold">Email</label>
+                    <input type="email" name="email" value="{{email}}" class="form-control"
+                        placeholder="Enter your email" required>
+                    <br>
+
+
+                    <label for="date_of_birth" class="font-weight-bold">Date of birth</label>
+                    <input type="date" class="form-control" name="date_of_birth" value="{{date_of_birth}}"
+                        placeholder="dd-mm-yyyy" required>
+                    <br>
+
+                    <label for="phone" class="font-weight-bold">Phone Number</label>
+                    <input type="text" name="phone" class="form-control" value="{{phone}}"
+                        placeholder="Enter your phone number" required>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-lg-6 font-weight-bold">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" value="{{password}}" class="form-control"
+                                placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="col-lg-6 font-weight-bold">
+                            <label for="password2">Retype-Password</label>
+                            <input type="password" name="password2" value="{{password2}}" class="form-control"
+                                placeholder="Re-type Password" required>
+                        </div>
+                    </div>
+                    <br>
+
+                    <input  type="submit" name="submit" value="Sign Up" class="btn btn-primary btn-lg text-center">
+
+                    <br>
+                    <a id="signup" href="/login">Already a member ? <span style="color: rgba(31, 112, 53, 1);">Sign In</span></a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

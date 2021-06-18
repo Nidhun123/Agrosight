@@ -1,0 +1,42 @@
+<div class="card card-body col-sm-4 mx-auto">
+    <h3>Enter address to confirm</h3>
+    <form action="/orders" method="post">
+        
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea type="text" class="form-control" name="address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control text-muted" name="product_id" value="{{idea._id}}" required>
+            </div>
+            
+
+            <div class="form-group">             
+                <input type="hidden" class="form-control text-muted" name="name" value="{{idea.name}}" required>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control text-muted" name="price" value="{{idea.price}}" required>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control text-muted" name="exp_date" value="{{idea.exp_date}}" required>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control text-muted" name="pkd_date" value="{{idea.pkd_date}}" required>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control text-muted" name="quantity" value="{{idea.quantity}}" required>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control text-muted" name="discount" id="discount" value="{{idea.discount}}" required>
+            </div>
+
+            
+            <button type="submit" class="btn btn-primary">Order Confirm</button>
+    </form>
+</div>

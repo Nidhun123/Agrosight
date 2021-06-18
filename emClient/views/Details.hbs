@@ -1,0 +1,137 @@
+<div id="product"></div><br>
+
+<div class="container">
+  <div class="d-flex flex-row ">
+    <div class="pr-5 m-2">
+      <img src="/uploads/{{idea.image}}"
+        style="display: block;height: 400px;width: 400px;object-fit: cover;margin-bottom: 16px;border-radius: 20px;">
+
+      <div class="container">
+        <div class=" text-left">
+          {{#if idea.cart}}
+          <div >
+                    <a  class="btn  btn-lg btn-primary" style="color: white;" href="/cart"
+            role="button">Go to cart</a>
+          </div>
+          {{else}}
+          <div >
+            <a onclick="add()" class="btn  btn-lg btn-primary" style="color: white;" href="/cart/{{idea._id}}"
+            role="button">Add to cart</a>
+          </div>
+          {{/if}}
+
+          <a id="buy" class="btn btn-success btn-lg" href="/orderconfirm/{{idea._id}}" role="button">Buy now</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="pr-5 m-2">
+      <h1 style="font-size: 40px; color:rgb(14, 90, 39) "><b>{{balance.[0]}}</b></h1>
+
+
+      <p class="tab">
+        <b style="font-size: 30px; " id="do"><i class="fas fa-rupee-sign"></i> {{idea.newprice}}</b>
+        <del style="color: #979797; font-size: 20px; ">{{balance.[3]}} </del>
+        <span style="  color: rgb(21, 116, 60); padding: 10px; font-size: 30px; ">{{balance.[4]}}% Off </span>
+
+      </p>
+      <!-- <pre class="tab"><span id="Off"><b>{{Off_percentage}}% Off</b></span> <del><b>{{Original_price}}</b></del> <b>{{New_price}}</b></pre> -->
+      <br><br>
+      <p style="color: rgb(5, 64, 192); font-size: 27px;"><b>Product details</b></p>
+
+      <p><span style="font-size: 22px;">Packed date - <b>{{balance.[2]}}</b></span></p>
+      <p><span style="font-size: 22px;">Expiry date - <b>{{balance.[1]}}</b></span></p>
+      <p><span style="font-size: 22px;">Quantity included - <b>{{balance.[6]}} Kg</b></span></p><br><br>
+      <div class="d-flex flex-row ">
+
+      </div>
+
+      <!-- 
+                    <span>
+                        Packed date- <b>{{Packed_date}}</b><br>
+                        Expiry date- <b>{{Expiry_date}}</b><br>
+                        Quantity included- <b>{{Quantity_included}}</b>
+                    </span>
+                    -->
+    </div>
+
+
+
+  </div>
+
+</div>
+
+<style>
+  #buy{
+    position: absolute;
+    left: 22%;
+    top: 70%;
+  }
+</style>
+
+{{!--
+<!-- Page for Getting Details of Event Under Transaction Family "Event_Managment_App" -->
+<style>
+  input::placeholder {
+    color: black;
+  }
+</style>
+<center>
+  <h3> Event Details </h3>
+  <img src="/images/index54.png" height="75px">
+  <div class="row">
+    <div style="float:right; margin-right:50px;">
+      <a href="/transactionID">
+        <button type="button" style="background-color: #0066ff" class="waves-effect waves-light btn-small">Latest
+          Transaction ID</button>
+      </a><br><br>
+      <a href="/transactionReceipts">
+        <button type="button" style="background-color: #0066ff" class="waves-effect waves-light btn-small">Transaction
+          Receipts</button>
+      </a>
+    </div>
+    <div class="col s6 offset-s3"
+      style="background-color: rgb(240, 232, 232); opacity: 1.0; height: 300px; padding: 20px 20px; border: 1px solid; overflow: scroll; overflow-x: hidden; overflow-y: scroll;">
+      <form autocomplete="off">
+        <div class="formtext">
+          <br>
+          <label style="font-size:16px; float:left; color:black;">Enter Product Name</label>
+          <input type="text" id="date2" required>
+        </div>
+        <div>
+          <br />
+          <button type="submit" onclick="viewData(event)" style="background-color: #0066ff"
+            class="waves-effect waves-light btn-small">Submit</button>
+          <br>
+          <button type="reset" style="float: right; background-color: #ff0000"
+            class="waves-effect waves-light btn-small">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div>
+    <input type="text" id="result1" placeholder="result coming soon" />
+  </div>
+  <div>
+    <input type="text" id="result2" placeholder="result coming soon" />
+  </div>
+  <div>
+    <input type="text" id="result3" placeholder="result coming soon" />
+  </div>
+  <div>
+    <input type="text" id="result4" placeholder="result coming soon" />
+  </div>
+  <div>
+    <input type="text" id="result5" placeholder="result coming soon" />
+  </div>
+  <div>
+    <input type="text" id="result6" placeholder="result coming soon" />
+  </div>
+  <div>
+    <input type="text" id="result7" placeholder="result coming soon" />
+  </div>
+</center>
+--}}

@@ -1,0 +1,100 @@
+<style>
+    body {
+        background-image: url(/images/Register.jpg);
+        background-size: cover;
+        background-position: top;
+    }
+
+    #ui {
+        background-color: #ffffff60;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 25px;
+    }
+
+    h1 {
+        color: black;
+        font-family: cursive;
+    }
+
+    #ui input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 80%;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 40px;
+        margin-bottom: 10px;
+        border-radius: 25px;
+    }
+
+    .form-control {
+        background: transparent;
+        border-radius: 0px;
+        border: 0px;
+        border-bottom: 1px solid black;
+    }
+
+    #ui a {
+        margin-left: 110px;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+    }
+
+    #agro {
+        position: absolute;
+        right: 35%;
+    }
+
+    #signup {
+        position: absolute;
+        right: 34%;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7"> </div>
+        <div class="col-lg-5">
+
+            <div class="card " id="ui">
+                <br>
+
+                <form method="post" action="/login" class="form-group ">
+                    <div id="agro" class="text-center mb-3">
+                        <a style="font-weight:bold; font-size:xx-large; font-family:Merienda;"><span
+                                style="color: black; ">A</span><span
+                                style="color: rgba(31, 112, 53, 1); ">grosight</span></a>
+                    </div>
+
+                    <br>
+                    <div class="mt-5">
+                        <label for="email" class="font-weight-bold">Email</label>
+                        <input type="email" name="email" value="{{email}}" class="form-control"
+                            placeholder="Enter your email" required>
+                        <br>
+                    </div>
+
+
+
+                    <label for="password" class="font-weight-bold">Password</label>
+                    <input type="password" name="password" value="{{password}}" class="form-control"
+                        placeholder="Enter your password" required>
+                    <br>
+                    <input type="submit" name="submit" value="Sign In" class="btn btn-primary btn-lg text-center mb-4">
+
+                    <br>
+                    <div>
+                        <a id="signup" href="/register">Not a member ? <span style="color: rgba(31, 112, 53, 1);">Sign Up</span></a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

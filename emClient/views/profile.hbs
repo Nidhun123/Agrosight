@@ -1,0 +1,58 @@
+<div class="container" style="margin-top: 100px;">
+    <div class="row d-flex justify-content-center">
+        <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                   <div class="row"> 
+                    <div class="col-lg-4 bg-success rounded-left">
+                        <div class="card-block text-center text-white">
+                            <i class="fas fa-user-tie fa-7x mt-5"></i>
+                            <h2 class="font-weight-bold mt-4">{{fname}} {{lname}}</h2>
+                            <a href="/editt/{{_id}}" style="color: white;">
+                                <i class="far fa-edit fa-2x mb-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 bg-white rounded-right">
+                        <h1 class="mt-3 text-center">Information</h1>
+                        <hr class="badge-primary">
+                        <div class="mt-3 row">
+                            <div class="col-lg-6">
+                                <p class="font-weight-bold">User ID:</p>
+                                <h6 class="text-muted">{{_id}}</h6>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="font-weight-bold">Email:</p>
+                                <h6 class="text-muted">{{email}}</h6>
+                            </div>                            
+                        </div>
+                        <div class="mt-3 row">
+                            <div class="col-lg-6">
+                                <p class="font-weight-bold">Phone:</p>
+                                <h6 class="text-muted">{{phone}}</h6>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="font-weight-bold">DOB:</p>
+                                <h6 class="text-muted">{{date_of_birth}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+                <div class="col-lg-2"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body{
+        background-image: url(/images/img1.jpg);
+        background-size: cover;
+        background-position: top;
+    }
+
+    .far:hover{
+        color: #ffc107;
+    }
+
+</style>

@@ -1,0 +1,51 @@
+{{!-- {{#each ideas}}
+
+
+<div class="card card-body mb-2" style="  border-radius: 25px;
+  ">
+ 
+
+    <div class="d-flex flex-row ">
+        <a href="/product/{{_id}}">
+            <div class="p-2 ">
+                <img src="/uploads/{{image}}"
+                    style="display: block;height: 150px;width: 150px;object-fit: cover;border-radius: 20px; ">
+            </div>
+        </a><br><br><br>
+        <div class="d-flex flex-column p-2 m-2">
+            <a style="text-decoration: none;" href="/product/{{_id}}">
+                <div>
+                    <p><span style="font-size:x-large; color:rgb(14, 90, 39)"><b>{{name}}</b> </span></p>
+                </div>
+            </a>
+            <p>
+                <b style="font-size:x-large; "><i class="fas fa-rupee-sign"></i> {{newprice}}</b>
+                <del style="color: #979797; font-size: large; ">{{price}} </del>
+                <span style="  color: rgb(21, 116, 60); padding: 10px; font-size: x-large; ">{{discount}}% Off </span>
+
+            </p>
+            <div>
+                <p><span style="font-size: large;"><b>Expiry Date : </b>{{exp_date}}</span></p>
+            </div>
+        </div>
+        <div>
+            {{#if cart}}
+            <a class="btn btn-danger btn-lg" style="color: white;" href="/ideas/cart/{{_id}}" role="button">Remove
+                from cart</a>
+            {{else}}
+            <a class="btn  btn-lg btn-primary" style="color: white;" href="/ideas/cart/{{_id}}" role="button">Add
+                to cart</a>
+            {{/if}}
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+{{else}}
+<h1 style="margin-top: 20%; margin-left: 20%; color:rgb(15, 83, 32)">No products matching the searched item :(</h1>
+{{/each}} --}}

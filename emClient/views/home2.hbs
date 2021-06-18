@@ -1,0 +1,315 @@
+<div class="d-flex flex-row  ">
+	<div class="card col-md-2 p-2 m-4  " style="height: 20%;">
+		<form action="/filter" method="post">
+			<div class="mb-4">
+				<div class="form-group">
+					<label style="font-weight: bold;" for="Category">Category</label>
+					<select class="form-control" name="category">
+						<option>None</option>
+						<option>Fruits</option>
+						<option>Vegetables</option>
+						<option>Flowers</option>
+						<option>Cereals</option>
+						<option>Medicinal</option>
+						<option>Leafy</option>
+
+					</select>
+				</div>
+			</div>
+
+			<div class="mb-4">
+				<div class="form-group">
+					<label style="font-weight: bold;" for="discount">Discount</label>
+					<select class="form-control" name="discount">
+						<option>None</option>
+						<option value="10">Above 10%</option>
+						<option value="30">Above 30%</option>
+						<option value="50">Above 50%</option>
+						<option value="70">Above 70%</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="mb-4">
+				<div class="form-group">
+					<label style="font-weight: bold;" for="price">Price</label>
+					<div class="middle mb-4 mt-2">
+						<div class="multi-range-slider">
+							<input type="range" id="input-left" min="0" max="1000" value="0">
+							<input type="range" id="input-right" min="0" max="1000" value="1000">
+
+							<div class="slider">
+								<div class="track"></div>
+								<div class="range"></div>
+								<div class="thumb left"></div>
+								<div class="thumb right"></div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col">
+								<input type="text" id="slide1" class="form-control " name="min_price" required>
+							</div>
+							<div class="col">
+								<input type="text" id="slide2" class="form-control " name="max_price" required>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary btn-md"
+						style="font-weight: bold; width:100%">Filter</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="card card-body mt-4 mr-4">
+		<div class="mb-4">
+			<div class="row ">
+
+				<a href="/category/low_to_high" class="col ml-2 btn btn-outline-dark btn-sm"
+					style="font-weight: bold; width:15%">Price : Low to High</a>
+
+				<a href="/category/high_to_low" class="col ml-2 btn btn-outline-dark btn-sm"
+					style="font-weight: bold; width:15%">Price : High to Low</a>
+
+				<a href="/category/newest" class="col ml-2 btn btn-outline-dark btn-sm"
+					style="font-weight: bold; width:15%">Newest First</a>
+
+				<a href="/category/closest" class="col ml-2 btn btn-outline-dark btn-sm"
+					style="font-weight: bold; width:15%">Closest Expiry</a>
+
+				<a href="/category/discount" class="col ml-2 mr-2 btn btn-outline-dark btn-sm"
+					style="font-weight: bold; width:15%">Highest Discount</a>
+			</div>
+		</div>
+
+		<div class="row">
+			{{#each ideas}}
+			<div class="col-3 mb-4">
+
+
+				<div id="card" class=" card card-body mx-4">
+					{{!-- <h4>{{category}}</h4> --}}
+
+					<div class="row">
+						<div class="text-center col mb-3">
+							{{#if wishlist}}
+							<a onclick="remwish()"  href="/wishlist/{{_id}}" role="button">
+							<span  style=" position:absolute; right:10%; color:rgb(9, 114, 56);"
+								class="iconify"  data-icon="ant-design:heart-filled"  ></span></a>
+							{{else}}
+							<a onclick="addwish()" href="/wishlist/{{_id}}" role="button">
+							<span style=" position:absolute; right:10%; color:rgb(168, 168, 168);" class="iconify" data-icon="ant-design:heart-outlined" data-inline="false"></span></a>
+							{{/if}}
+							<a href="/state/{{name}}" style="z-index: auto;">
+								<div class="">
+									<img src="/uploads/{{image}}"
+										style="height: 193px;width: 193px;object-fit: cover; border-radius:5px">
+								</div>
+							</a>
+
+						</div>
+
+
+						<div class="col text-center">
+							<span>
+								<b style="font-size:large; "><i class="fas fa-rupee-sign"></i> {{newprice}}</b>
+								<del style="color: #979797; font-size:medium; ">{{price}} </del>
+								<span style="  color: rgb(21, 116, 60); padding: 10px; font-size: large; ">{{discount}}%
+									Off
+								</span>
+
+							</span>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			{{else}}
+			<h1 style="margin-top: 10%; text-align:center; color:rgb(15, 83, 32)">No Matching Items :(</h1>
+
+			{{/each}}
+
+		</div>
+	</div>
+
+</div>
+<style>
+	#wish {}
+
+	#card:hover {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		border-radius: 5px;
+		box-shadow: darkblue;
+	}
+
+	.slider {
+		position: relative;
+		z-index: 1;
+		height: 10px;
+		margin: 0 15px;
+
+	}
+
+	.slider>.track {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: 5px;
+		background-color: #000000da;
+	}
+
+	.slider>.range {
+		position: absolute;
+		z-index: 2;
+		left: 25%;
+		right: 25%;
+		top: 0;
+		bottom: 0;
+		border-radius: 5px;
+		background-color: #1daf5f;
+
+	}
+
+	.slider>.thumb {
+		position: absolute;
+		z-index: 3;
+		width: 20px;
+		height: 20px;
+		background-color: #1daf5f;
+
+		border-radius: 50%;
+		box-shadow: 0 0 0 0 rgba(98, 0, 238, .1);
+		transition: box-shadow .3s ease-in-out;
+
+	}
+
+	.slider>.thumb.left {
+		left: 25%;
+		transform: translate(-15px, -5px);
+	}
+
+	.slider>.thumb.right {
+		right: 25%;
+		transform: translate(15px, -5px);
+	}
+
+	.slider>.thumb.hover {
+		box-shadow: 0 0 0 10px rgba(98, 0, 238, .1);
+	}
+
+	.slider>.thumb.active {
+		box-shadow: 0 0 0 20px rgba(98, 0, 238, .2);
+	}
+
+	input[type=range] {
+		position: absolute;
+		pointer-events: none;
+		-webkit-appearance: none;
+		z-index: 2;
+		height: 10px;
+		width: 100%;
+		opacity: 0;
+
+	}
+
+	input[type=range]::-webkit-slider-thumb {
+		pointer-events: all;
+		width: 30px;
+		height: 30px;
+		border-radius: 0;
+		border: 0 none;
+		background-color: red;
+		-webkit-appearance: none;
+
+	}
+</style>
+<script>
+
+	var inputLeft = document.getElementById("input-left");
+	var inputRight = document.getElementById("input-right");
+
+	var thumbLeft = document.querySelector(".slider > .thumb.left");
+	var thumbRight = document.querySelector(".slider > .thumb.right");
+	var range = document.querySelector(".slider > .range");
+
+	function setLeftValue() {
+		var _this = inputLeft,
+			min = parseInt(_this.min),
+			max = parseInt(_this.max);
+
+		_this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+		var percent = ((_this.value - min) / (max - min)) * 100;
+
+		thumbLeft.style.left = percent + "%";
+		range.style.left = percent + "%";
+	}
+	setLeftValue();
+
+	function setRightValue() {
+		var _this = inputRight,
+			min = parseInt(_this.min),
+			max = parseInt(_this.max);
+
+		_this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+		var percent = ((_this.value - min) / (max - min)) * 100;
+
+		thumbRight.style.right = (100 - percent) + "%";
+		range.style.right = (100 - percent) + "%";
+	}
+	setRightValue();
+
+	inputLeft.addEventListener("input", setLeftValue);
+	inputRight.addEventListener("input", setRightValue);
+
+	inputLeft.addEventListener("mouseover", function () {
+		thumbLeft.classList.add("hover");
+	});
+	inputLeft.addEventListener("mouseout", function () {
+		thumbLeft.classList.remove("hover");
+	});
+	inputLeft.addEventListener("mousedown", function () {
+		thumbLeft.classList.add("active");
+	});
+	inputLeft.addEventListener("mouseup", function () {
+		thumbLeft.classList.remove("active");
+	});
+
+	inputRight.addEventListener("mouseover", function () {
+		thumbRight.classList.add("hover");
+	});
+	inputRight.addEventListener("mouseout", function () {
+		thumbRight.classList.remove("hover");
+	});
+	inputRight.addEventListener("mousedown", function () {
+		thumbRight.classList.add("active");
+	});
+	inputRight.addEventListener("mouseup", function () {
+		thumbRight.classList.remove("active");
+	});
+
+	const slidevalue = document.querySelector('#slide1');
+	const inputslider = document.querySelector('#input-left');
+	inputslider.oninput = (() => {
+		let value = inputslider.value;
+		slidevalue.value = value;
+	});
+
+	const slide = document.querySelector('#slide2');
+	const input = document.querySelector('#input-right');
+	input.oninput = (() => {
+		let value = input.value;
+		slide.value = value;
+	});
+
+</script>

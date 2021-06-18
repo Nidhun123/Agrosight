@@ -1,0 +1,64 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+
+
+<div class=" card card-body col-sm-4 mx-auto " >
+    <h3 class=" mx-auto">Add Product</h3>
+    <form action="/registration" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label for="Category">Category</label>
+            <select class="form-control" name="category">
+                <option>Fruits</option>
+                <option>Vegetables</option>
+                <option>Flowers</option>
+                <option>Cereals</option>
+                <option>Medicinal</option>
+                <option>Leafy</option>
+                
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" name="price" placeholder="Price in Rs" required>
+        </div>
+
+        <div class="form-group">
+            <label for="exp_date">Expiry Date</label>
+            <input type="date" class="form-control" name="exp_date" placeholder="dd-mm-yyyy"  required>
+        </div>
+        <div class="form-group">
+            <label for="pkd_date">Packed Date</label>
+            <input type="date" class="form-control" name="pkd_date" placeholder="dd-mm-yyyy" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" placeholder="In Kg" name="quantity" required>
+        </div>
+
+        <div class="form-group">
+            <label for="discount">Discount</label>
+            <input type="number" class="form-control" placeholder="Enter in percentage" name="discount" required>
+            
+            
+        </div>
+
+        <div class="form-group">
+
+            <label for="image">Select Image</label><br>
+            <input type="file" name="image" multiple><br><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>
