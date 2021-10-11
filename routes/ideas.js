@@ -35,6 +35,7 @@ router.get('/product/:id', ensureAuthenticated, (req, res) => {
 
 router.get('/category/:category', ensureAuthenticated, (req, res) => {
     console.log(req.params.category)
+    console.log(req.params.category)
     Idea.find({
         category: req.params.category
     }).lean()
